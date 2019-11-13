@@ -2,17 +2,26 @@
 #define SPARSE_MATRIX_NODE_H
 
 template <typename T>
-class Matrix;
-
-template <typename T>
-class Node {
-protected:
-    Node<T> *next, *down;
-
+class Node
+{
 public:
-    explicit Node();
+    int positionX, positionY;
+    T data;
+    Node *next, *down;
+    
+    Node(){
+        next = nullptr;
+        down = nullptr;
+    };
+    Node(int _positionX,int _positionY) {
+        positionX = _positionX;
+        positionY=_positionY;
+        next = nullptr;
+        down = nullptr;
+    }
 
-    friend class Matrix<T>;
+    Node(int positionX,int positionY,T data, Node *next,Node *down)
+    : positionX(positionX), positionY(positionY),data(data),next(nullptr),down(nullptr) {}
 };
 
 #endif //SPARSE_MATRIX_NODE_H
