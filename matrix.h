@@ -63,6 +63,8 @@ void Matrix<T>::set(int setx, int sety, T data) {
      throw out_of_range("Fuera del rango");
     }
 
+
+
         auto *fila = this->x;
         auto *columna = this->y;
 
@@ -84,6 +86,8 @@ void Matrix<T>::set(int setx, int sety, T data) {
     auto Set = new Node<T>(setx,sety, data,fila->next,columna->down);
     fila->next=Set;
     columna->down=Set;
+
+    // Si data es 0?
     }
 
 
@@ -114,10 +118,13 @@ Matrix<T> Matrix<T>::operator*(T scalar) const {
             mult->set(i, j, (((*this)(i, j) * scalar)));
         }
     }
+
+    // Y el return?
 }
 
 template<typename T>
 Matrix<T> Matrix<T>::operator*(Matrix<T> other) const {
+    // Falta
     return Matrix<T>(0, 0);
 }
 
@@ -133,6 +140,7 @@ Matrix<T> Matrix<T>::operator+(Matrix<T> other) const {
         }
     }
 
+    // Y el return?
 }
 
 template<typename T>
@@ -147,6 +155,8 @@ Matrix<T> Matrix<T>::operator-(Matrix<T> other) const {
             resta->set(i,j,(((*this)(i, j)-other(i,j))));
         }
     }
+
+    // Y el return?
 }
 
 template<typename T>
@@ -159,6 +169,9 @@ Matrix<T> Matrix<T>::transpose() const {
         }
 
     }
+
+
+    // Y el return?
 }
 
 template<typename T>
@@ -176,7 +189,7 @@ void Matrix<T>::print() const {
 
 template<typename T>
 Matrix<T>::~Matrix() {
-
+    // Falta
 }
 
 
